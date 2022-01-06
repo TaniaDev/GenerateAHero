@@ -12,11 +12,12 @@ var host = Host
     {
         services
             .AddHostedService<HostedService1>()
-            .AddSingleton<HeroGenerator>()
-            .AddSingleton<NameGenerator>()
-            .AddSingleton<SuperpowerGenerator>()
-            .AddSingleton<WeaponGenerator>()
-            .AddSingleton(new Random(1));
+            .AddHostedService<HostedService2>()
+            .AddTransient<HeroGenerator>()
+            .AddTransient<NameGenerator>()
+            .AddTransient<SuperpowerGenerator>()
+            .AddTransient<WeaponGenerator>()
+            .AddTransient<Random>((services) => new Random(0));
     })
     .Build();
 

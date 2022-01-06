@@ -8,7 +8,6 @@ public class NameGenerator
         "Incrível",
         "Pequeno",
         "Grande"
-
     };
 
     private static string[] SecondNames = new string[]
@@ -41,5 +40,4 @@ public class NameGenerator
         var secondIndex = this.random.Next(0, SecondNames.Length);
         return $"{FirstNames[fisrtIndex]}-{SecondNames[secondIndex]}";
     }
-
 }
